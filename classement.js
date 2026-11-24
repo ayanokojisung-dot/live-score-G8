@@ -34,12 +34,14 @@ function afficher() {
   document.querySelector("#classement tbody").innerHTML = lignes
     .map(
       (e, i) =>
-        `<tr><td>${i + 1}</td><td>${e.nom}</td><td>${e.j}</td><td>${e.pts}</td><td>$ {e.diff}</td></tr>`
+        `<tr><td>${i + 1}</td><td>${e.nom}</td><td>${e.j}</td><td>${e.pts}</td><td>${e.diff}</td></tr>`
     )
     .join("");
 
   document.getElementById("leader").textContent =
     "Leader : " + lignes[0].nom;
+  document.getElementById("statistiques").textContent =
+    `${MATCHS.length} matchs disputés · ${lignes.length} équipes`;
 }
 
 afficher();
